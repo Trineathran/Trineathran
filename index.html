@@ -1,0 +1,564 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Trineathran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/slider.css" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<script type="text/javascript" src="js/modernizr.custom.28468.js"></script>
+<script type="text/javascript" src="js/jquery.cslider.js"></script>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript">
+				$(function() {
+				
+					$('#da-slider').cslider({
+						autoplay	: true,
+						bgincrement	: 450
+					});
+				
+				});
+			</script>
+<!-- Add jQuery library -->
+<!--<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>-->
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="js/jquery.mousewheel.pack.js?v=3.1.3"></script>
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.fancybox.css?v=2.1.5" media="screen" />
+<!-- Add Button helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-buttons.css?v=1.0.5" />
+<script type="text/javascript" src="js/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<!-- Add Thumbnail helper (this is optional) -->
+<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-thumbs.css?v=1.0.7" />
+<script type="text/javascript" src="js/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- Add Media helper (this is optional) -->
+<script type="text/javascript" src="js/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-1").click(function() {
+				$.fancybox.open({
+					href : 'iframe_1.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+					$("#fancybox-manual-2").click(function() {
+				$.fancybox.open({
+					href : 'iframe_2.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			
+					$("#fancybox-manual-3").click(function() {
+				$.fancybox.open({
+					href : 'iframe_3.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+					$("#fancybox-manual-4").click(function() {
+				$.fancybox.open({
+					href : 'iframe_4.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+		
+
+		});
+	</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="header-top">
+    <div class="logo"> <a href="index.html"> <span class="view-first"> <img src="images/logo.png" alt=""/> </span> </a> </div>
+    <div class="h_menu4">
+      <!-- start h_menu4 -->
+      <a class="toggleMenu" href="#">Menu</a>
+      <ul class="nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About us</a> </li>
+        <li><a href="google_street_view.html">Google Street View</a> </li>
+        <li><a href="services.html">Services</a> </li>
+        <li><a href="gallery.html">Gallery</a> </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <script type="text/javascript" src="js/nav.js"></script>
+    </div>
+    <!-- end h_menu4 -->
+    <div class="clear"></div>
+  </div>
+  <!-- end header_main4 -->
+  <div class="slider">
+    <div id="da-slider" class="da-slider">
+      <div class="da-slide">
+        <h1>Consultation</h1>
+        <p>We work with our clients from a wide range of industries.</p>
+        <a href="#about" class="da-link">Show More</a> </div>
+      <div class="da-slide">
+        <h1>Google Shoot in Place</h1>
+        <p>Powerful Photo Shoot is a key solution for the greatest flexibility.</p>
+        <a href="#about" class="da-link">Show More</a> </div>
+      <div class="da-slide">
+        <h1>Publishing</h1>
+        <p>Professional support makes your life easier by providing.</p>
+        <a href="#about" class="da-link">Show More</a> </div>
+      <div class="da-slide">
+        <h1>Moderation</h1>
+        <p>Top quality is achieved with the thorough optimization that includes proven processes and techniques.</p>
+        <a href="#about" class="da-link">Show More</a> </div>
+      <nav class="da-arrows"> <span class="da-arrows-prev"></span> <span class="da-arrows-next"></span> </nav>
+    </div>
+  </div>
+</div>
+<div class="main"> <br/>
+  <br/>
+  <br/>
+  <div class="wrap">
+    <div class="content-top">
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic.jpg" alt=""/> <i class="settings"> </i> </span>
+        <div class="desc">
+          <h3>Consultation</h3>
+          <p>We work with our clients from a wide range of industries to help you create your future by aligning your strategy with go to Market with google business.</p>
+        </div>
+      </div>
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic1.jpg" alt=""/> <i class="clock"> </i> </span>
+        <div class="desc">
+          <h3>Google Shoot in Place</h3>
+          <p>Powerful Photo Shoot is a key solution for the greatest flexibility to suit multiple needs of your business virtual tour.</p>
+        </div>
+      </div>
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic2.jpg" alt=""/> <i class="aeroplane"> </i> </span>
+        <div class="desc">
+          <h3>Publishing</h3>
+          <p>Professional support makes your life easier by providing you a helping hand when using our products.</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--<div class="container">
+    <div class="section-header">
+      <h2 class="section-title text-center wow fadeInDown">Our process</h2>
+      <p class="text-center wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br>
+        et dolore magna aliqua. Ut enim ad minim veniam</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 wow fadeInLeft"> <img class="img-responsive" src="images/mac_img1.png"> </div>
+      <div class="col-sm-6">
+        <div class="media service-box wow fadeInRight">
+          <div class="pull-left"> <i class="fa fa-line-chart"></i> </div>
+          <div class="media-body">
+            <h4 class="media-heading">Meet</h4>
+            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+          </div>
+        </div>
+        <div class="media service-box wow fadeInRight">
+          <div class="pull-left"> <i class="fa fa-cubes"></i> </div>
+          <div class="media-body">
+            <h4 class="media-heading">Plan Your Shoot</h4>
+            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+          </div>
+        </div>
+        <div class="media service-box wow fadeInRight">
+          <div class="pull-left"> <i class="fa fa-pie-chart"></i> </div>
+          <div class="media-body">
+            <h4 class="media-heading">We Shoot the Scenes</h4>
+            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+          </div>
+        </div>
+        <div class="media service-box wow fadeInRight">
+          <div class="pull-left"> <i class="fa fa-pie-chart"></i> </div>
+          <div class="media-body">
+            <h4 class="media-heading">Designing Your Tour</h4>
+            <p>Backed by some of the biggest names in the industry, Firefox OS is an open platform that fosters greater</p>
+            <br/>
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+    <div class="m_3"><span class="left_line"></span> Our Projects<span class="right_line"> </span></div>
+    <a class="view-first" style="padding-left:30px;" id="fancybox-manual-1" href="javascript:;"><img src="images/pic3.jpg" alt=""/> </a> <a class="view-first" style="padding-left:30px;"  id="fancybox-manual-2" href="javascript:;"><img src="images/pic4.jpg" alt=""/> </a> <a class="view-first"  style="padding-left:30px;" id="fancybox-manual-3" href="javascript:;"><img src="images/pic5.jpg" alt=""/> </a> <a class="view-first" style="padding-left:30px;"  id="fancybox-manual-4" href="javascript:;"><img src="images/pic6.jpg" alt=""/> </a> <br/>
+    <br/>
+    <br/>
+    <div class="m_3"><span class="left_line"></span> Our Process<span class="right_line"> </span></div>
+    <div class="content-top">
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic_1.jpg" alt=""/> <i class="settings"> </i> </span>
+        <div class="desc">
+          <h3>Plan Your Shoot</h3>
+          <p>We decide on a suitable date and time and arrive to shoot the scenes. Each scene takes just a few minutes to shoot meaning minimal impact to your operation.</p>
+        </div>
+      </div>
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic_22.jpg" alt=""/> <i class="clock"> </i> </span>
+        <div class="desc">
+          <h3>We Shoot The Scenes</h3>
+          <p>Back in the office we create your virtual tour using your very own branding, fonts and styles. We upload to our test server for review and when you're happy we finalise.</p>
+        </div>
+      </div>
+      <div class="col_1_of_4 span_1_of_4"> <span class="view-first"> <img src="images/pic_33.jpg" alt=""/> <i class="aeroplane"> </i> </span>
+        <div class="desc">
+          <h3>Designing Your Tour</h3>
+          <p>Professional support makes your life easier by providing you a helping hand when using our products.</p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script src="js/jssor.slider-22.2.16.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $Idle: 0,
+              $AutoPlaySteps: 4,
+              $SlideDuration: 2500,
+              $SlideEasing: $Jease$.$Linear,
+              $PauseOnHover: 4,
+              $SlideWidth: 140,
+              $Cols: 7
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 809);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*responsive code end*/
+        };
+    </script>
+    <style>
+</style>
+    <div class="m_3"> <span class="left_line"></span> Our Clients <span class="right_line"></span> </div>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:100px;overflow:hidden;visibility:hidden;">
+      <!-- Loading Screen -->
+      <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+        <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+      </div>
+      <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:100px;overflow:hidden;">
+        <div> <img data-u="image" src="images/energy.jpg" /> </div>
+        <div> <img data-u="image" src="images/jayanth.jpg" /> </div>
+        <div> <img data-u="image" src="images/digital.jpg" /> </div>
+        <a data-u="any" href="http://www.jssor.com" style="display:none">Scrolling Logo Thumbnail Slider</a>
+        <div> <img data-u="image" src="images/adwords.jpg" /> </div>
+        <div> <img data-u="image" src="images/google.jpg" /> </div>
+        <div> <img data-u="image" src="images/energy.jpg" /> </div>
+        <div> <img data-u="image" src="images/jayanth.jpg" /> </div>
+        <div> <img data-u="image" src="images/digital.jpg" /> </div>
+        <div> <img data-u="image" src="images/adwords.jpg" /> </div>
+        <a data-u="any" href="http://www.jssor.com" style="display:none">Scrolling Logo Thumbnail Slider</a>
+        <div> <img data-u="image" src="images/google.jpg" /> </div>
+      </div>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
+    <br/>
+    <!--<div class="m_3"><span class="left_line"></span>Testimonials<span class="right_line"> </span></div>-->
+    <!--<div class="wmuSlider example">
+      <div class="wmuSliderWrapper">
+        <article style="position: absolute; width: 100%; opacity: 0;">
+          <div class="banner-text">
+            <p>Your photos are STUNNING! Thank you so, so much. They are all just spectacular and a gift we will<br/>
+              <br/>
+              treasure always. We are really grateful. You are just amazing, Jeff. Just a talented photographer.<br/>
+              <br/>
+              We can't thank you enough for sharing your craft with us. Thank you!</p>
+          </div>
+          <h3 class="m_6">Marcos & Crystal <span class="bg1"> </span></h3>
+        </article>
+        <article style="position: relative; width: 100%; opacity: 1;">
+          <div class="banner-text">
+            <p>Wow! You have been such a pleasure to work with and to get to know! You and your photos are so <br/>
+              <br/>
+              beyond expectations. I love that you don't just take pictures, you capture moments. You are so <br/>
+              <br/>
+              incredibly talented and we were so lucky to have you! You're totally awesome</p>
+          </div>
+          <h3 class="m_6">The Walsey <span class="bg1"> </span></h3>
+        </article>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+          <div class="banner-text">
+            <p>The photos are great and capture the personality and spirit of the subjects. My son (the bat <br/>
+              <br/>
+              mitzvah girl's brother) does not like to pose for pictures, but in the photos of him, he looks natural <br/>
+              <br/>
+              and happy and looks like he is having fun. Jeff is also really fun to work with. I think Jeff may be <br/>
+              <br/>
+              slightly more expensive than other photographers, but the result is so much better. The <br/>
+              <br/>
+              photographs are fresh and make each party look like it is the most fun, ever!</p>
+          </div>
+          <h3 class="m_6">The Israelski <span class="bg1"> </span></h3>
+        </article>
+        <article style="position: absolute; width: 100%; opacity: 0;">
+          <div class="banner-text">
+            <p>Thank you! Thank you! Thank you! A million thank you's to you for capturing the day and night <br/>
+              <br/>
+              without missing a beat. You were a blast to work with and we loved every minute of it! Seeing the <br/>
+              <br/>
+              pictures the day after the big day kept it all going, especially when time just flew by. It is going to be <br/>
+              <br/>
+              hard to pick our favorite photos, with so many great ones to choose from. Thank you for all! </p>
+          </div>
+          <h3 class="m_6">Lauren and Trey <span class="bg1"> </span></h3>
+        </article>
+      </div>
+      <ul class="wmuSliderPagination">
+        <li><a href="#" class="">0</a></li>
+        <li><a href="#" class="class="wmuActive"">1</a></li>
+        <li><a href="#" >2</a></li>
+        <li><a href="#">3</a></li>
+      </ul>
+    </div>-->
+    <script src="js/jquery.wmuSlider.js"></script>
+    <script>
+       					$('.example').wmuSlider();         
+   				   </script>
+  </div>
+</div>
+<div class="footer">
+  <div class="wrap">
+    <div class="footer-grid footer-grid1">
+      <div class="f-logo"> <a href="index.html"><img src="images/f-logo.png" alt=""></a> </div>
+      <p>We are certified by Google trusted agency to cover local business and to take your Business into Google’s high standards cutting edge and help your business to be listed into Google’s listing to stand out from a sea of competition in the search engine.</p>
+    </div>
+    <div class="footer-grid footer-grid2">
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="pin"> </i>
+          <div class="extra-wrap">
+            <p>2/20 Sivakami Amman Kovil,<br/>
+              2nd Street Chidambaram</p>
+          </div>
+        </li>
+        <li><i class="phone"> </i>
+          <div class="extra-wrap">
+            <p>904 333 8164</p>
+          </div>
+        </li>
+        <li><i class="mail"> </i>
+          <div class="extra-wrap1">
+            <p>trineathran@gmail.com</p>
+          </div>
+        </li>
+        <li><i class="earth"> </i>
+          <div class="extra-wrap1">
+            <p>info@trineathran.in</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-grid footer-grid3">
+      <h4>Latest Tweets</h4>
+      <a class="twitter-timeline" data-width="224" data-height="200" data-theme="dark" data-link-color="#434955" href="https://twitter.com/trineathran">Tweets by trineathran</a>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <!--<div class="recent-tweet">
+        <div class="recent-tweet-icon"> <span> </span> </div>
+        <div class="recent-tweet-info">
+          <p>You have been wonderful. Great attention, commitment and support from the entire team.<a href="#"> 3 Hours Ago</a></p>
+        </div>
+        <div class="clear"> </div>
+      </div>-->
+      <!--<div class="recent-tweet1">
+        <div class="recent-tweet-icon"> <span> </span> </div>
+        <div class="recent-tweet-info">
+          <p>Great job done. Though we would have been happier with more quantity delivery <a href="#"> 3 Hours Ago</a></p>
+        </div>
+        <div class="clear"> </div>
+      </div>-->
+    </div>
+    <div class="footer-grid footer-grid4">
+      <h4>News Letter</h4>
+      <p>Randomised words which don't look even slightly believable. If you are going to use a passage</p>
+      <form>
+        <input type="text" value="Email Address" onFocus="this.value = '';" onBlur="if (this.value == 'trineathran@gmail.com') {this.value = 'Email Address';}">
+        <input type="submit" value="">
+      </form>
+      <div class="trusted_logo"> <img src="images/Copy of SVtrusted-EN.png" alt=""> </div>
+    </div>
+    <div class="clear"> </div>
+  </div>
+</div>
+<div class="footer-bottom">
+  <div class="wrap">
+    <div class="copy">
+      <p>2017 ©  trineathran.in. All Right Reserved <a href="" target=""></a></p>
+    </div>
+    <div class="social">
+      <ul>
+        <li class="facebook"><a href="https://www.facebook.com/Trineathran-1370616466346487/" target="_blank"><span> </span></a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com/in/trineathran-siva-8903b1139" target="_blank"><span> </span></a></li>
+        <li class="twitter"><a href="https://twitter.com/trineathran" target="_blank"><span> </span></a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+</body>
+</html>
