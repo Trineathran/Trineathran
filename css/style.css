@@ -391,6 +391,16 @@ p.w3l_sub_para_agile {
     -moz-background-size: cover;
     min-height:500px;
 }
+
+#servicess {
+     background:url(../images/e_contact_us.jpg) no-repeat 0px 0px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    min-height:500px;
+}
 .agile_overlay{
     background: url(../images/overlay.png)repeat;
     padding: 6em 0 6.5em 0;
