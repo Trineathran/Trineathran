@@ -1,3 +1,0 @@
-Trineathran
-
-www.Trineathran.in
