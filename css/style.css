@@ -498,6 +498,55 @@ h3.wthree_head.two {
   animation-direction: alternate;
 }
 /*-- //services --*/
+
+/*--//timeline --*/
+
+.timeline-top_agile_its h2 {
+	font-size:3em;
+	font-weight:600;
+	color: #000;
+	text-transform: uppercase;
+}
+.timeline-top_agile_its {
+     padding: 7em 0em 0em 3em;
+}
+.timeline-top_agile_its h5 {
+    font-size: 11px;
+    font-weight: 400;
+    color: #33cc99;
+    text-transform: uppercase;
+    padding: 0px 0px 10px 0px;
+    border-bottom: 1px solid #cec8c8;
+    margin: 0px 0px 15px 0px;
+    letter-spacing: 4px;
+}
+.timeline-top_agile_its span {
+     font-weight: 600;
+    font-style: italic;
+    color: #ef5734;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 2em;
+}
+.timeline-top_agile_its p {
+  font-size:1em;
+  font-weight: 400;
+  color: #838383;
+  line-height: 2em;
+  letter-spacing:1px;
+  margin-bottom:1em;
+}
+p.w3l_sub_para_agile {
+    color: #33cc99;
+    letter-spacing: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: 400;
+}
+/*--timeline end here--*/
+
+
+
 /*-- stats --*/
 .w3layouts_stats_left{
     padding: 1em 0 4em 0;
